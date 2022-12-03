@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router()
 
-const ProductManager = require('../controllers')
+const ProductManager = require('../controllers/controllers')
 const ProductManagers = new ProductManager()
 
 const Inicializando = ProductManagers.Init()
