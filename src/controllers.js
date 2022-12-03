@@ -83,11 +83,11 @@ class ProductManager {
 
     getProductById(id) {
         const result = this.data.find(p => p.id == id)
-        console.log(result)
+        return result
     }
 
     getProducts = () => {
-        console.log(this.data)
+        return this.data
     }
 
     deleteProduct = async (id) => {
