@@ -1,0 +1,23 @@
+<div class="row">
+  {{#each nuevoArray}}
+  <div class="col-md-3 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <p> ID: {{ id }} </p>
+        <p> Producto : {{ title }} </p>
+        <p> Descipcion : {{ description }} </p>
+        <p> Codigo : {{ code }} </p>
+        <p> Stock : {{ stock }} </p>
+        <p> Categoria : {{ category }} </p>
+        <p> Precio : {{ price }} </p>      
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h3>No hay productos cargado en  la Base de datos.</h3>
+    </div>
+  </div>
+  {{/each}}
+</div>

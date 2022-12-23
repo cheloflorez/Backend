@@ -1,0 +1,60 @@
+<div class="row">
+  {{#each Pruductos}}
+  <div class="col-md-3 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{ id }} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p> Producto : {{ title }} </p>
+        <p> Descipcion : {{ description }} </p>
+        <p> Codigo : {{ code }} </p>
+        <p> Stock : {{ stock }} </p>
+        <p> Categoria : {{ category }} </p>
+        <p> Precio : {{ price }} </p>
+        <!-- DELETE REQUEST -->
+        <form action="/api/products/{{id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+  <div class="col-md-3 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header">
+          <h3>Nuevo Producto</h3>
+        </div>
+        <div class="card-body">
+          <form action="/api/products" method="POST">
+            <div class="form-group">
+              <input type="text" name="title" class="form-control" placeholder="Nombre Producto" autofocus />
+            </div>
+            <div class="form-group">
+              <input type="text" name="description" class="form-control" placeholder="Descripcion"></input>
+            </div>
+            <div class="form-group">
+              <input type="text" name="code" class="form-control" placeholder="Codigo"></input>
+            </div>
+            <div class="form-group">
+              <input type="number" name="stock" class="form-control" placeholder="Stock"></input>
+            </div>
+            <div class="form-group">
+              <input type="text" name="category" class="form-control" placeholder="Categoria"></input>
+            </div>
+            <div class="form-group">
+              <input type="number" name="price" class="form-control" placeholder="Precio"></input>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block" type="submit">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
